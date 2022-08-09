@@ -29,18 +29,18 @@ string[] fillingArrayWords(string[] arrayWords)
 // алгоритм решения к задаче
 string[] NewStrArray(string[] array)
 {
-    string[] arrayWords = new string[array.Length];//Array.Empty<string>();
+    List<string> list = new List<string>();
     int countSymbol = 3; // магическое число по условию задачи
     int k = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= countSymbol)
         {
-            arrayWords[k] = array[i];
+            list.Add(array[i]);
             k++;
         }
     }
-    return arrayWords;
+    return list.ToArray();
 }
 
 string[] create = CreateArrayWords();
@@ -49,17 +49,3 @@ Console.Write($"Массив случайных строк: [{string.Join(' ', a
 Console.WriteLine();
 string[] newStrArray = NewStrArray(array);
 Console.Write($"Массив строк длина которых меньше либо равна 3 символа: [{string.Join(' ', newStrArray)}]");
-
-
-
-/*
- * int count = 0;
-    for (int i = 0; i < array1.Length; i++)
-    {
-    if(array1[i].Length <= 3)
-        {
-        array2[count] = array1[i];
-        count++;
-        }
-    }
- */
